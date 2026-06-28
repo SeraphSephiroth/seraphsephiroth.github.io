@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Key of Haravatat</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="titlebar" id="titlebar">
+    <div class="titlebar-title">
+      <span class="titlebar-icon">&#x2726;</span>
+      The Key of Haravatat
+    </div>
+    <div class="titlebar-controls">
+      <button id="btn-about" class="titlebar-btn" title="About">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+          <circle cx="8" cy="8" r="6.5" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M8 7v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          <circle cx="8" cy="5" r="0.9" fill="currentColor"/>
+        </svg>
+      </button>
+      <button id="btn-layout" class="titlebar-btn" title="Toggle layout">
+        <svg id="layout-icon-side" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <rect x="1" y="1" width="10" height="16" rx="2" stroke="currentColor" stroke-width="1.5"/>
+          <rect x="13" y="1" width="4" height="16" rx="1" stroke="currentColor" stroke-width="1.5"/>
+        </svg>
+        <svg id="layout-icon-bottom" width="16" height="16" viewBox="0 0 18 18" fill="none" style="display:none;">
+          <rect x="1" y="1" width="16" height="10" rx="2" stroke="currentColor" stroke-width="1.5"/>
+          <rect x="1" y="13" width="16" height="4" rx="1" stroke="currentColor" stroke-width="1.5"/>
+        </svg>
+      </button>
+      <button id="btn-minimize" class="titlebar-btn">
+        <svg width="12" height="12" viewBox="0 0 12 12"><line x1="2" y1="6" x2="10" y2="6" stroke="currentColor" stroke-width="1.5"/></svg>
+      </button>
+      <button id="btn-maximize" class="titlebar-btn">
+        <svg width="12" height="12" viewBox="0 0 12 12"><rect x="2" y="2" width="8" height="8" rx="1" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+      </button>
+      <button id="btn-close" class="titlebar-btn btn-close">
+        <svg width="12" height="12" viewBox="0 0 12 12"><line x1="2" y1="2" x2="10" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="10" y1="2" x2="2" y2="10" stroke="currentColor" stroke-width="1.5"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="controls-row">
+      <div class="language-selector">
+        <label for="script-select">Script</label>
+        <select id="script-select" class="language-select">
+          <option value="khaenriah">Ancient</option>
+          <option value="teyvat">Teyvat Common</option>
+          <option value="inazuma">Inazuma</option>
+          <option value="liyue">Liyue</option>
+          <option value="sumeru">Sumeru</option>
+          <option value="deshret">Deshret</option>
+          <option value="fontaine">Fontaine</option>
+          <option value="drip">Drip Marketing</option>
+        </select>
+      </div>
+
+      <div class="mode-toggle">
+        <button id="mode-decode" class="mode-btn active">Script &rarr; English</button>
+        <button id="mode-encode" class="mode-btn">English &rarr; Script</button>
+      </div>
+
+    </div>
+
+    <div class="main-area" id="main-area">
+      <div class="translator-panel" id="translator-panel">
+        <div class="panel input-panel">
+          <label class="panel-label" id="input-label">Ancient Script</label>
+          <textarea id="input-text" placeholder="Type to see glyphs decode to English..." spellcheck="false"></textarea>
+        </div>
+
+        <div class="arrow-divider" id="arrow-divider">
+          <span class="arrow">&#x27A4;</span>
+        </div>
+
+        <div class="panel output-panel">
+          <label class="panel-label" id="output-label">English Text</label>
+          <div id="output-text" class="output-display"></div>
+        </div>
+      </div>
+
+      <div class="reference-chart" id="reference-chart">
+        <h3 id="chart-title">Ancient Reference</h3>
+        <div id="chart-grid" class="chart-grid"></div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="particles" id="particles"></div>
+
+  <div class="about-overlay hidden" id="about-overlay">
+    <div class="about-modal">
+      <div class="about-header">
+        <h2>The Key of Haravatat</h2>
+        <span class="about-version">v1.0.0</span>
+      </div>
+      <p class="about-tagline">A Genshin Impact script decoder</p>
+
+      <div class="about-section">
+        <p class="about-disclaimer">This is an unofficial fan tool and is not affiliated with, endorsed by, or connected to HoYoverse or miHoYo in any way.</p>
+      </div>
+
+      <div class="about-section">
+        <h3>Font Credits</h3>
+        <p class="about-font-text">All script fonts are fan-made recreations. Thanks to the creators and to <a id="font-repo-link" href="#">thomas200593/genshin-fonts-collections</a> for compiling them.</p>
+      </div>
+
+      <div class="about-section about-legal">
+        <p>&copy; All rights reserved by miHoYo. Other properties belong to their respective owners.</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="renderer.js"></script>
+</body>
+</html>

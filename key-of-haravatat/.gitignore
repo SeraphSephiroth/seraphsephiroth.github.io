@@ -1,0 +1,7 @@
+node_modules/
+dist/
+*.log
+
+# Unused fonts
+font/Genshin-Impact-Enochian-Abyss-Mage-Regular.ttf
+font/Genshin-Impact-Inazuma-NoVert-Regular.ttf
